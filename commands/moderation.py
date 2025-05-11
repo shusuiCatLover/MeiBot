@@ -4,8 +4,8 @@ from datetime import datetime
 import asyncio
 
 def setup_moderation_commands(bot):
-    MUTE_CHANNEL_ID = 111111111111111111
-    LOG_CHANNEL_ID = 111111111111111111
+    MUTE_CHANNEL_ID = [1013101310641459314, 1158442966428434462]
+    LOG_CHANNEL_ID = 1250788081032892446
     EMBED_COLOR = 0x5c8dd6
 
     async def send_log_embed(ctx, action, member, duration=None, reason=None):
@@ -34,9 +34,9 @@ def setup_moderation_commands(bot):
             await ctx.send(f'{ctx.author.mention}, você só pode usar este comando em um canal específico.')
             return
 
-        muted_role = discord.utils.get(ctx.guild.roles, name='kalle-mute')
+        muted_role = discord.utils.get(ctx.guild.roles, name='Mei_Mute')
         if not muted_role:
-            muted_role = await ctx.guild.create_role(name='kalle-mute')
+            muted_role = await ctx.guild.create_role(name='Mei_Mute')
             for channel in ctx.guild.channels:
                 overwrite = discord.PermissionOverwrite(send_messages=False, speak=False)
                 await channel.set_permissions(muted_role, overwrite=overwrite)
@@ -73,7 +73,7 @@ def setup_moderation_commands(bot):
     @bot.command(name="unmute", aliases=['desmutar'], help="Desmuta um usuário.")
     @commands.has_permissions(kick_members=True)
     async def unmute(ctx, member: discord.Member):
-        muted_role = discord.utils.get(ctx.guild.roles, name='kalle-mute')
+        muted_role = discord.utils.get(ctx.guild.roles, name='Mei_Mute')
         if muted_role in member.roles:
             await member.remove_roles(muted_role)
             await ctx.send(f'{member.mention} foi desmutado.')
