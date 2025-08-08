@@ -1,0 +1,11 @@
+venv/
+.venv/
+.env/
+music/downloads/
+autorole_config.json
+greet_config.json
+reaction_roles.json
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
