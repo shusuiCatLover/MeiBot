@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/shusui/Documents/scripts/DiscordBot/MeiBot/venv
+set -gx VIRTUAL_ENV /home/shusui/Documents/GitHub/MeiBot/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH
